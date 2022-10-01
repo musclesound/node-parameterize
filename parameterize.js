@@ -180,7 +180,7 @@ var downcode = function(slug){
     return downcoded;
 }
 
-parameterize = function(s, num_chars, delimiter) {
+const parameterize = function(s, num_chars, delimiter) {
     delimiter = delimiter || '-'
 
     // changes, e.g., "Petty theft" to "petty_theft"
@@ -195,11 +195,4 @@ parameterize = function(s, num_chars, delimiter) {
     return s.substring(0, num_chars);// trim to first num_chars chars
 }
 
-
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = parameterize;
-} else if (typeof define === 'function' && define.amd) {
-    define('parameterize', [], function(require, exports, module) {
-        return parameterize;
-    });
-}
+export default parameterize
